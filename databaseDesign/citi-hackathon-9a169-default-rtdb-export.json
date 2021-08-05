@@ -1,0 +1,191 @@
+{
+  "merchants" : {
+    "Adidas" : {
+      "merchant_account" : {
+        "contact" : "6219 1968",
+        "display_name" : "Adidas Official Store",
+        "location" : "290 Orchard Rd, Singapore 238859",
+        "password" : 2309,
+        "profile_image" : "https://www.changicitypoint.com.sg/images/Adidas_logo.jpg"
+      },
+      "merchant_listings" : {
+        "voucher_1357" : {
+          "claimed" : 0,
+          "expired" : 0,
+          "issued" : 0,
+          "limit" : 50,
+          "listing_status" : "listed"
+        }
+      }
+    },
+    "Nike" : {
+      "merchant_account" : {
+        "contact" : "6896 2602",
+        "display_name" : "Nike Official Store",
+        "location" : "2 Jurong East Street 21, #02 - 50 IMM, Singapore 609601",
+        "password" : 1239,
+        "profile_image" : "https://c.static-nike.com/a/images/w_1200,c_limit/bzl2wmsfh7kgdkufrrjq/seo-title.jpg"
+      },
+      "merchant_issues" : {
+        "issue_2936" : {
+          "status" : "Expired",
+          "user_id" : "Bob",
+          "voucher_id" : "voucher_1312"
+        }
+      },
+      "merchant_listings" : {
+        "voucher_1312" : {
+          "claimed" : 37,
+          "expired" : 5,
+          "issued" : 42,
+          "limit" : 50,
+          "listing_status" : "delisted"
+        }
+      }
+    },
+    "Uniqlo" : {
+      "merchant_account" : {
+        "contact" : "6255 1682",
+        "display_name" : "Uniqlo Singapore",
+        "location" : "68 Orchard Road, #02-16 to 20 & #03-11/30/32, Plaza, Singapore 238839",
+        "password" : 9023,
+        "profile_image" : "https://c.static-nike.com/a/images/w_1200,c_limit/bzl2wmsfh7kgdkufrrjq/seo-title.jpg"
+      },
+      "merchant_issues" : {
+        "issue_1235" : {
+          "status" : "issued",
+          "user" : "Anthony",
+          "voucher_id" : "\"voucher_1468"
+        }
+      },
+      "merchant_listings" : {
+        "voucher_1468" : {
+          "claimed" : 2,
+          "expired" : 0,
+          "issued" : 10,
+          "limit" : 50,
+          "status" : "listed"
+        }
+      }
+    }
+  },
+  "users" : {
+    "Bob" : {
+      "transaction_history" : {
+        "issue_1312" : {
+          "price" : 10,
+          "status" : "bought"
+        },
+        "issue_2307" : {
+          "price" : "90 points",
+          "status" : "sold"
+        }
+      },
+      "user_account" : {
+        "age" : 22,
+        "contact_number" : 96535631,
+        "display_name" : "Bob",
+        "password" : 1234,
+        "points" : 292,
+        "user_image" : "https://media-exp1.licdn.com/dms/image/C5103AQHp8QvbLRChCw/profile-displayphoto-shrink_200_200/0/1580924682251?e=1633564800&v=beta&t=E2c1NiyTOfoVFj8LQsTJh60BAuWkIqbF89iaV9myjSY",
+        "user_savings" : 197.3
+      },
+      "user_game" : {
+        "grid" : {
+          "grid1" : 1,
+          "grid2" : 1,
+          "grid3" : 1,
+          "grid4" : 1,
+          "grid5" : 1,
+          "grid6" : 1,
+          "grid7" : 1,
+          "grid8" : 1,
+          "grid9" : 1
+        },
+        "voucher_id" : "voucher_9023"
+      },
+      "user_listings" : {
+        "issue_2580" : {
+          "issue_buyer_id" : 0,
+          "issue_price" : "100 points",
+          "issue_status" : "listed"
+        }
+      },
+      "user_wallet" : {
+        "expired" : {
+          "issue_2936" : "voucher_1312"
+        },
+        "inWallet" : {
+          "issue_1726" : "voucher_2580"
+        },
+        "isFavorite" : {
+          "voucher_id" : "voucher_1468"
+        }
+      }
+    }
+  },
+  "voucher_issues" : {
+    "issue_2936" : {
+      "merchant_id" : "Nike",
+      "user_id" : "Bob",
+      "voucher_id" : "voucher_1312"
+    }
+  },
+  "vouchers" : {
+    "voucher_1312" : {
+      "currentAvailable" : 42,
+      "exclusions" : [ "for select models" ],
+      "flashDealPrice" : 0,
+      "header" : "$30 off new shoe releases",
+      "imageURL" : "https://c.static-nike.com/a/images/w_1200,c_limit/bzl2wmsfh7kgdkufrrjq/seo-title.jpg",
+      "isExpiring" : 1,
+      "isFlashDeal" : 0,
+      "maxAvailable" : 50,
+      "merchant" : "Nike",
+      "price" : 12,
+      "validFrom" : "09/03/2021",
+      "validTill" : "04/08/2021"
+    },
+    "voucher_1357" : {
+      "currentAvailable" : 0,
+      "exclusions" : [ "Not inclusive of store exclusive sneakers" ],
+      "flashDealPrice" : 0,
+      "header" : "$25 off new shoe releases",
+      "imageURL" : "https://www.changicitypoint.com.sg/images/Adidas_logo.jpg",
+      "isExpiring" : 0,
+      "isFlashDeal" : 1,
+      "maxAvailable" : 50,
+      "merchant" : "Adidas",
+      "price" : 12,
+      "validFrom" : "09/05/2021",
+      "validTill" : "15/08/2021"
+    },
+    "voucher_1468" : {
+      "currentAvailable" : 10,
+      "exclusions" : [ "non PH", "2-5pm", "Up to $20" ],
+      "flashDealPrice" : 0,
+      "header" : "25% storewide",
+      "imageURL" : "https://micdn-13a1c.kxcdn.com/images/sg/content-images/uniqlo_123rf.jpg",
+      "isExpiring" : 0,
+      "isFlashDeal" : 0,
+      "maxAvailable" : 50,
+      "merchant" : "Uniqlo",
+      "price" : 10,
+      "validFrom" : "05/08/2021",
+      "validTill" : "05/09/2021"
+    },
+    "voucher_2580" : {
+      "currentAvailable" : 96,
+      "exclusions" : "[\"All outlets except Jewel\", \"2-5pm\"",
+      "flashDealPrice" : 0,
+      "header" : "$20 McDonald's Voucher",
+      "imageURL" : "https://d1nqx6es26drid.cloudfront.net/app/uploads/2019/11/05175538/McD_TheToken%C2%AE_1235_RGB.png",
+      "isExpiring" : 1,
+      "maxAvailable" : 100,
+      "merchant" : "McDonald's",
+      "price" : 10,
+      "validFrom" : "12/07/2021",
+      "validTill" : "10/08/2021"
+    }
+  }
+}
