@@ -50,7 +50,73 @@ class _TabsScreenState extends State<MerchantTabsScreen> {
                     })
               ]
             : _selectedPageIndex == 0
-                ? [IconButton(icon: Icon(Icons.add), onPressed: () {})]
+                ? [
+                    IconButton(
+                        icon: Icon(Icons.add),
+                        onPressed: () {
+                          showModalBottomSheet(
+                              context: context,
+                              builder: (_) {
+                                return Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.vertical(
+                                          top: Radius.circular(20))),
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.9,
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          "Add Product",
+                                          style: TextStyle(
+                                              fontSize: 25,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        Container(
+                                          padding: EdgeInsets.all(10),
+                                          child: Form(
+                                              child: Column(
+                                            children: [
+                                              TextFormField(
+                                                decoration: InputDecoration(
+                                                    labelText: 'Title'),
+                                                textInputAction:
+                                                    TextInputAction.next,
+                                              ),
+                                              TextFormField(
+                                                decoration: InputDecoration(
+                                                    labelText: 'Promotions'),
+                                                textInputAction:
+                                                    TextInputAction.next,
+                                              ),
+                                              TextFormField(
+                                                keyboardType:
+                                                    TextInputType.number,
+                                                decoration: InputDecoration(
+                                                    labelText: 'Cost'),
+                                                textInputAction:
+                                                    TextInputAction.next,
+                                              ),
+                                              TextFormField(
+                                                keyboardType:
+                                                    TextInputType.number,
+                                                decoration: InputDecoration(
+                                                    labelText:
+                                                        'Number of Vouchers'),
+                                                textInputAction:
+                                                    TextInputAction.next,
+                                              ),
+                                            ],
+                                          )),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              });
+                        })
+                  ]
                 : null,
       ),
       body: _pages[_selectedPageIndex]['page'],
