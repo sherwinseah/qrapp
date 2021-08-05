@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:qrapp/screens/login_screen.dart';
+import 'package:qrapp/screens/merchant_scan_qr_screen.dart';
 import 'scan_qr_screen.dart';
-import 'voucher_shop_screen.dart';
-import 'wallet_screen.dart';
+import 'merchant_vouchers_screen.dart';
+import 'merchant_account_screen.dart';
 
-class TabsScreen extends StatefulWidget {
-  static const routename = '/tabs';
+class MerchantTabsScreen extends StatefulWidget {
+  static const routename = '/merchant-tabs';
 
   @override
   _TabsScreenState createState() => _TabsScreenState();
 }
 
-class _TabsScreenState extends State<TabsScreen> {
+class _TabsScreenState extends State<MerchantTabsScreen> {
   List<Map<String, Object>> _pages;
   int _selectedPageIndex = 0;
 
@@ -22,9 +23,9 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   void initState() {
     _pages = [
-      {'page': VoucherShopScreen(), 'title': 'Vouchers Mall'},
-      {'page': ScanQrScreen(), 'title': 'Scan QR'},
-      {'page': WalletScreen(), 'title': 'Voucher Wallet'},
+      {'page': MerchantVouchersScreen(), 'title': 'My Vouchers'},
+      {'page': MerchantScanQrScreen(), 'title': 'Scan QR'},
+      {'page': MerchantAccountScreen(), 'title': 'My Account'},
     ];
     super.initState();
   }
@@ -48,7 +49,9 @@ class _TabsScreenState extends State<TabsScreen> {
                       Navigator.of(context).pushReplacementNamed('/');
                     })
               ]
-            : null,
+            : _selectedPageIndex == 0
+                ? [IconButton(icon: Icon(Icons.add), onPressed: () {})]
+                : null,
       ),
       body: _pages[_selectedPageIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
@@ -61,7 +64,7 @@ class _TabsScreenState extends State<TabsScreen> {
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(Icons.storefront_outlined),
-            label: 'Vouchers Mall',
+            label: 'Vouchers',
           ),
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
@@ -76,7 +79,7 @@ class _TabsScreenState extends State<TabsScreen> {
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(Icons.account_balance_wallet_outlined),
-            label: 'Wallet',
+            label: 'Account',
           ),
         ],
       ),

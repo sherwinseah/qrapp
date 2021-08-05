@@ -32,6 +32,7 @@ class WalletCard extends StatelessWidget {
                 child: FittedBox(
                   fit: BoxFit.contain,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         item.header,
@@ -78,7 +79,7 @@ class WalletCard extends StatelessWidget {
                                             height: MediaQuery.of(context)
                                                     .size
                                                     .height *
-                                                0.6,
+                                                0.35,
                                             child: Column(
                                               children: [
                                                 Text(

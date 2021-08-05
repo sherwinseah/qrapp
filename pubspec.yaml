@@ -26,7 +26,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: ^0.13.3
   intl: ^0.17.0
+  permission_handler: ^8.1.4+2
   provider: ^5.0.0
+  # qr_code_scanner: ^0.5.2
   qr_flutter: ^4.0.0
 
 dev_dependencies:

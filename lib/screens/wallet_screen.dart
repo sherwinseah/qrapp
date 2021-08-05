@@ -34,7 +34,7 @@ class _WalletScreenState extends State<WalletScreen> {
                       backgroundColor: Colors.grey.shade300,
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(30),
-                          child: Image.asset('../assets/images/Photo.jpg')),
+                          child: Image.asset('assets/images/Photo.jpg')),
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

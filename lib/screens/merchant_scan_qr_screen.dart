@@ -3,14 +3,14 @@ import 'package:provider/provider.dart';
 // import 'package:qr_code_scanner/qr_code_scanner.dart';
 // import 'package:permission_handler/permission_handler.dart';
 
-class ScanQrScreen extends StatefulWidget {
-  static const routeName = '/scan-qr';
+class MerchantScanQrScreen extends StatefulWidget {
+  static const routeName = '/merchant-scan-qr';
 
   @override
-  _ScanQrScreenState createState() => _ScanQrScreenState();
+  _MerchantScanQrScreenState createState() => _MerchantScanQrScreenState();
 }
 
-class _ScanQrScreenState extends State<ScanQrScreen> {
+class _MerchantScanQrScreenState extends State<MerchantScanQrScreen> {
   // final qrKey = GlobalKey(debugLabel: 'QR');
 
   // QRViewController controller;
@@ -26,7 +26,7 @@ class _ScanQrScreenState extends State<ScanQrScreen> {
       height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/images/customer_scan_qr.png'),
+            image: AssetImage('assets/images/merchant_scan_qr.png'),
             fit: BoxFit.fill),
       ),
       //   child: Stack(

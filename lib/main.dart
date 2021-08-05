@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qrapp/providers/vouchers.dart';
 import 'package:qrapp/screens/login_screen.dart';
+import 'package:qrapp/screens/merchant_account_screen.dart';
+import 'package:qrapp/screens/merchant_scan_qr_screen.dart';
+import 'package:qrapp/screens/merchant_tabs_screen.dart';
+import 'package:qrapp/screens/merchant_vouchers_screen.dart';
 import './screens/tabs_screen.dart';
 import './screens/scan_qr_screen.dart';
 import './screens/voucher_shop_screen.dart';
@@ -66,6 +70,10 @@ class MyApp extends StatelessWidget {
           VoucherShopScreen.routeName: (ctx) => VoucherShopScreen(),
           ScanQrScreen.routeName: (ctx) => ScanQrScreen(),
           WalletScreen.routeName: (ctx) => WalletScreen(),
+          MerchantAccountScreen.routeName: (ctx) => MerchantAccountScreen(),
+          MerchantTabsScreen.routename: (ctx) => MerchantTabsScreen(),
+          MerchantVouchersScreen.routeName: (ctx) => MerchantVouchersScreen(),
+          MerchantScanQrScreen.routeName: (ctx) => MerchantScanQrScreen(),
         },
       ),
     );

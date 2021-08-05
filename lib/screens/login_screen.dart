@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qrapp/screens/merchant_tabs_screen.dart';
 import 'package:qrapp/screens/tabs_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,7 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('../assets/images/background.png'),
+              image: AssetImage('assets/images/background.png'),
               fit: BoxFit.fill),
         ),
         child: Column(
@@ -25,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              '../assets/images/Platform_Logo_Blue.png',
+              'assets/images/Platform_Logo_Blue.png',
               scale: 3,
             ),
             SizedBox(
@@ -63,7 +64,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context)
+                        .pushReplacementNamed(MerchantTabsScreen.routename);
+                  },
                   child: Column(
                     children: [
                       Icon(

@@ -16,6 +16,8 @@ class VoucherItem {
   final double flashDealPrice;
   bool inWallet;
   bool isUsed;
+  final double numberIssued;
+  final double numberClaimed;
 
   VoucherItem({
     @required this.id,
@@ -25,7 +27,7 @@ class VoucherItem {
     @required this.price,
     @required this.validFrom,
     @required this.validTill,
-    @required this.imageUrl1,
+    this.imageUrl1,
     this.isFavorite = false,
     this.isExpiring = false,
     this.isExpired = false,
@@ -33,6 +35,8 @@ class VoucherItem {
     this.flashDealPrice,
     this.inWallet = false,
     this.isUsed = false,
+    this.numberIssued,
+    this.numberClaimed,
   });
 }
 
@@ -46,7 +50,7 @@ class Vouchers with ChangeNotifier {
       price: 10,
       validFrom: "05/08/2021",
       validTill: "05/09/2021",
-      imageUrl1: "../assets/images/uniqlo_logo.png",
+      imageUrl1: "assets/images/uniqlo_logo.png",
       isExpiring: false,
       isFavorite: false,
     ),
@@ -58,7 +62,7 @@ class Vouchers with ChangeNotifier {
       price: 12,
       validFrom: "09/05/2021",
       validTill: "15/08/2021",
-      imageUrl1: "../assets/images/adidas_logo.png",
+      imageUrl1: "assets/images/adidas_logo.png",
       isFavorite: true,
       isExpiring: false,
       isFlashDeal: true,
@@ -73,7 +77,7 @@ class Vouchers with ChangeNotifier {
       price: 10,
       validFrom: "12/07/2021",
       validTill: "19/08/2021",
-      imageUrl1: "../assets/images/mac_logo.png",
+      imageUrl1: "assets/images/mac_logo.png",
       isFavorite: true,
       isExpiring: false,
       isExpired: false,
@@ -87,7 +91,7 @@ class Vouchers with ChangeNotifier {
       price: 10,
       validFrom: "09/05/2021",
       validTill: "04/08/2021",
-      imageUrl1: "../assets/images/adidas_logo.png",
+      imageUrl1: "assets/images/adidas_logo.png",
       isFavorite: false,
       isExpiring: true,
       isExpired: true,
@@ -101,12 +105,14 @@ class Vouchers with ChangeNotifier {
       price: 12,
       validFrom: "09/03/2021",
       validTill: "04/04/2021",
-      imageUrl1: "../assets/images/nike_logo.png",
+      imageUrl1: "assets/images/nike_logo.png",
       isFavorite: false,
       isExpiring: true,
       isExpired: true,
       isUsed: true,
       inWallet: true,
+      numberIssued: 50,
+      numberClaimed: 50,
     ),
     VoucherItem(
       id: "voucher_2546",
@@ -116,9 +122,11 @@ class Vouchers with ChangeNotifier {
       price: 20,
       validFrom: "05/09/2021",
       validTill: "04/10/2021",
-      imageUrl1: "../assets/images/nike_logo.png",
+      imageUrl1: "assets/images/nike_logo.png",
       isFavorite: true,
       isExpiring: false,
+      numberIssued: 80,
+      numberClaimed: 77,
     ),
     VoucherItem(
       id: "voucher_2535",
@@ -128,12 +136,14 @@ class Vouchers with ChangeNotifier {
       price: 16,
       validFrom: "05/07/2021",
       validTill: "07/08/2021",
-      imageUrl1: "../assets/images/nike_logo.png",
+      imageUrl1: "assets/images/nike_logo.png",
       isFavorite: false,
       isExpiring: true,
       isFlashDeal: true,
       flashDealPrice: 10,
       inWallet: true,
+      numberIssued: 100,
+      numberClaimed: 37,
     ),
   ];
 
@@ -157,6 +167,10 @@ class Vouchers with ChangeNotifier {
     return _items.where((item) => item.isFavorite == true).toList();
   }
 
+  List<VoucherItem> myListedVouchers(String merchant) {
+    return _items.where((item) => item.merchant == merchant).toList();
+  }
+
   List<VoucherItem> get inWalletNotUsed {
     return _items
         .where((item) =>
@@ -172,6 +186,11 @@ class Vouchers with ChangeNotifier {
             item.inWallet == true &&
             (item.isUsed == true || item.isExpired == true))
         .toList();
+  }
+
+  void addVoucher(VoucherItem newVoucher) {
+    _items.add(newVoucher);
+    notifyListeners();
   }
 
   void addToWallet(String id) {

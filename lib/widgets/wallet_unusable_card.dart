@@ -29,6 +29,7 @@ class WalletUnusableCard extends StatelessWidget {
                 child: FittedBox(
                   fit: BoxFit.contain,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         item.header,
