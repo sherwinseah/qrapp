@@ -79,7 +79,7 @@ class WalletCard extends StatelessWidget {
                                             height: MediaQuery.of(context)
                                                     .size
                                                     .height *
-                                                0.35,
+                                                0.5,
                                             child: Column(
                                               children: [
                                                 Text(

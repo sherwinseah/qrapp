@@ -48,14 +48,20 @@ class _LoginScreenState extends State<LoginScreen> {
                     Navigator.of(context)
                         .pushReplacementNamed(TabsScreen.routename);
                   },
-                  child: Column(
-                    children: [
-                      Icon(
-                        Icons.person,
-                        color: Colors.blue.shade900,
-                      ),
-                      Text('Customer'),
-                    ],
+                  child: Container(
+                    height: 100,
+                    width: 80,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Icon(
+                          Icons.person,
+                          color: Colors.blue.shade900,
+                          size: 70,
+                        ),
+                        Text('Customer'),
+                      ],
+                    ),
                   ),
                   style: ButtonStyle(
                     backgroundColor:
@@ -68,14 +74,20 @@ class _LoginScreenState extends State<LoginScreen> {
                     Navigator.of(context)
                         .pushReplacementNamed(MerchantTabsScreen.routename);
                   },
-                  child: Column(
-                    children: [
-                      Icon(
-                        Icons.store_mall_directory,
-                        color: Colors.blue.shade900,
-                      ),
-                      Text('Merchant'),
-                    ],
+                  child: Container(
+                    height: 100,
+                    width: 80,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Icon(
+                          Icons.store_mall_directory,
+                          color: Colors.blue.shade900,
+                          size: 70,
+                        ),
+                        Text('Merchant'),
+                      ],
+                    ),
                   ),
                   style: ButtonStyle(
                     backgroundColor:
